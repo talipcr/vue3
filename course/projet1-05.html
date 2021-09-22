@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Projet 1-05</title>
+		<script src="https://unpkg.com/vue@next"></script>
+	</head>
+	<body>
+		<div id="app">
+			{{dateFr}}
+			<br />
+			{{dateUs}}
+			<br />
+			{{dateFr2}}
+			<br />
+			{{dateUs2}}
+		</div>
+		<script>
+			const app = Vue.createApp({
+				data() {
+					return {
+						date: new Date(),
+						dateFr2: new Date().toLocaleDateString('fr-FR'),
+						dateUs2: new Date().toLocaleDateString('en-US'),
+					};
+				},
+				computed: {
+					dateFr() {
+						return this.date.toLocaleDateString('fr-FR');
+					},
+					dateUs() {
+						return this.date.toLocaleDateString('en-US');
+					},
+				},
+			});
+			app.mount('#app');
+		</script>
+	</body>
+</html>

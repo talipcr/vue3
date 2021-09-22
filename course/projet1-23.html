@@ -4,13 +4,22 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Projet1-</title>
+		<title>Projet1-23</title>
 		<script src="https://unpkg.com/vue@next"></script>
 	</head>
 	<body>
-		<div id="app"></div>
+		<div id="app">
+			<p><a href="http://google.com" @click="stop($event)">google</a></p>
+			<p><a href="http://bing.com">bing</a></p>
+		</div>
 		<script>
-			const app = Vue.createApp({});
+			const app = Vue.createApp({
+				methods: {
+					stop(event) {
+						event.preventDefault();
+					},
+				},
+			});
 			app.mount('#app');
 		</script>
 	</body>
